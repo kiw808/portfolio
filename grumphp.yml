@@ -6,24 +6,10 @@ grumphp:
             short_open_tag: false
             ignore_patterns: []
             triggered_by: ['php', 'phtml', 'php3', 'php4', 'php5']
-        phpcs:
-            standard: []
-            severity: ~
-            error_severity: ~
-            warning_severity: ~
-            tab_width: ~
-            report: full
-            report_width: ~
-            whitelist_patterns: []
-            encoding: ~
-            ignore_patterns: []
-            sniffs: []
-            triggered_by: [php]
-            exclude: []
         phpstan:
             autoload_file: ~
             configuration: ~
-            level: 1
+            level: 5
             force_patterns: []
             ignore_patterns: []
             triggered_by: ['php']
