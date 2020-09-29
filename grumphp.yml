@@ -1,5 +1,11 @@
 grumphp:
     tasks:
+        phplint:
+            exclude: []
+            jobs: ~
+            short_open_tag: false
+            ignore_patterns: []
+            triggered_by: ['php', 'phtml', 'php3', 'php4', 'php5']
         phpstan:
             autoload_file: ~
             configuration: ~
