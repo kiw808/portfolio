@@ -12,7 +12,7 @@ install:
   #- yarn --ignore-engines install
 script:
   - ./vendor/bin/phpcs
-  - ./vendor/bin/phpstan analyse --level 5
+  - ./vendor/bin/phpstan analyse -l 8
   #- ./bin/phpmd src text phpmd.xml
   #- ./bin/eslint assets/js
   #- ./bin/sass-lint -c sass-linter.yml -v
