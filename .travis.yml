@@ -11,8 +11,8 @@ install:
   - composer install
   #- yarn --ignore-engines install
 script:
-  - ./bin/phpcs
-  - ./bin/phpstan analyse --level 5
+  - ./vendor/bin/phpcs
+  - ./vendor/bin/phpstan analyse --level 5
   #- ./bin/phpmd src text phpmd.xml
   #- ./bin/eslint assets/js
   #- ./bin/sass-lint -c sass-linter.yml -v
