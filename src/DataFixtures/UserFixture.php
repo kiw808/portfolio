@@ -16,7 +16,7 @@ class UserFixture extends Fixture
         $this->encoder = $encoder;
     }
 
-    public function load(ObjectManager $manager)
+    public function load(ObjectManager $manager) : void
     {
         $user = new User();
         $user->setUsername('admin');
