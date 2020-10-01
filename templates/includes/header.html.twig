@@ -1,7 +1,22 @@
-<nav>
-    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-        <a href="{{ path('app_logout') }}">Logout</a>
-    {% else %}
-        <a href="{{ path('app_login') }}">Login</a>
-    {% endif %}
-</nav>
+<header>
+    <nav class="flex justify-between bg-indigo-500 p-6">
+        <div>
+            <ul class="flex">
+                <li>
+                    <a class="text-gray-300 hover:text-white" href="{{ path('home') }}">Home</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <ul class="flex">
+                <li class="mr-6">
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <a class="text-gray-300 hover:text-white" href="{{ path('app_logout') }}">Logout</a>
+                    {% else %}
+                        <a class="text-gray-300 hover:text-white" href="{{ path('app_login') }}">Login</a>
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
