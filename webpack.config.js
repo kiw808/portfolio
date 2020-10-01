@@ -1,4 +1,18 @@
 const Encore = require('@symfony/webpack-encore');
+const PurgeCssPlugin = require('purgecss-webpack-plugin');
+const glob = require('glob-all');
+const path = require('path');
+
+if (Encore.isProduction()) {
+    Encore.addPlugin(new PurgeCssPlugin({
+        paths: glob.sync([
+            path.join(__dirname, 'templates/**/*.html.twig')
+        ]),
+    defaultExtractor: (content) => {
+        return content.match(/[\w-/:]+(?<!:)/g) || [];
+        }
+    }));
+}
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
@@ -26,6 +40,7 @@ Encore
     .addEntry('app', './assets/app.js')
     //.addEntry('page1', './assets/page1.js')
     //.addEntry('page2', './assets/page2.js')
+    .addStyleEntry('tailwind', './assets/styles/tailwind.css')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
@@ -55,6 +70,9 @@ Encore
 
     // enables Sass/SCSS support
     .enableSassLoader()
+
+    // enable PostCSS
+    Encore.enablePostCssLoader()
 
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()
