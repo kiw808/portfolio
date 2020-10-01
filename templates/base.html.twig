@@ -9,7 +9,10 @@
         {% endblock %}
     </head>
     <body class="bg-gray-300">
-        {% include('includes/header.html.twig') %}
+        {% if app.request.get('_route') != 'app_login' %}
+            {% include('includes/header.html.twig') %}
+        {% endif %}
+
         {% block body %}{% endblock %}
 
         {% block javascripts %}

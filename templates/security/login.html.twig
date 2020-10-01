@@ -3,10 +3,14 @@
 {% block title %}Log in!{% endblock %}
 
 {% block body %}
-<div class="w-full max-w-xs mx-auto mt-24">
-    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" method="post">
+<div class="w-full max-w-xs mx-auto mt-32">
+    <form class="bg-white shadow-md rounded px-8 pt-6 pb-6 mb-4" method="post">
         {% if error %}
-            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            <div class="w-full bg-red-100 border border-red-500 rounded p-2 text-sm text-red-500 mb-3">{{ error
+                .messageKey|trans
+                    (error.messageData,
+                    'security')
+                }}</div>
         {% endif %}
 
         {% if app.user %}
@@ -20,7 +24,7 @@
         {% endif %}
 
         <div class="w-full flex justify-center">
-            <h1 class="text-2xl text-gray-800 mb-4">Please sign in</h1>
+            <h1 class="text-2xl text-gray-800 mb-6">Please sign in</h1>
         </div>
         <div class="mb-4">
             <label class="block text-gray-600 text-sm mb-2" for="inputUsername">Username</label>
@@ -59,6 +63,9 @@
                 focus:shadow-outline w-full" type="submit">
             Sign in
         </button>
+        <div class="flex justify-start mt-4">
+            <a class="text-gray-500 hover:text-gray-600 underline" href="{{ path('home') }}">back</a>
+        </div>
     </form>
 </div>
 {% endblock %}
