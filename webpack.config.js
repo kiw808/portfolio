@@ -72,7 +72,7 @@ Encore
     .enableSassLoader()
 
     // enable PostCSS
-    Encore.enablePostCssLoader()
+    .enablePostCssLoader()
 
     // uncomment if you use TypeScript
     //.enableTypeScriptLoader()
