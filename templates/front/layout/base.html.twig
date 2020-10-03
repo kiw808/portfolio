@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr" class="w-full">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('tailwind') }}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+    </head>
+    <body class="bg-gray-300 w-full">
+        {% if app.request.get('_route') != 'app_login' %}
+            {% include('front/layout/header.html.twig') %}
+        {% endif %}
+
+        {% block body %}{% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </body>
+</html>
