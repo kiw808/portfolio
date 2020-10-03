@@ -123,9 +123,6 @@
     "egulias/email-validator": {
         "version": "2.1.22"
     },
-    "friendsoftwig/twigcs": {
-        "version": "v3.2.2"
-    },
     "gitonomy/gitlib": {
         "version": "v1.2.2"
     },
@@ -161,9 +158,6 @@
     },
     "phpstan/phpstan": {
         "version": "0.12.47"
-    },
-    "pimple/pimple": {
-        "version": "v3.3.0"
     },
     "psr/cache": {
         "version": "1.0.1"
