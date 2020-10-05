@@ -1,0 +1,35 @@
+{% extends 'admin/layout/base.html.twig' %}
+
+{% block title %}TechnologyType Index{% endblock %}
+
+{% block body %}
+    <h1>TechnologyType index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for technology_type in technology_types %}
+            <tr>
+                <td>{{ technology_type.id }}</td>
+                <td>{{ technology_type.name }}</td>
+                <td>
+                    <a href="{{ path('admin_technology_type_show', {'id': technology_type.id}) }}">show</a>
+                    <a href="{{ path('admin_technology_type_edit', {'id': technology_type.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_technology_type_new') }}">Create new</a>
+{% endblock %}

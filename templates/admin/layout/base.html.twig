@@ -12,11 +12,11 @@
         <div class="min-h-screen flex">
             {% include('admin/layout/_admin-side.html.twig') %}
 
-            <div class="w-full">
+            <div class="w-full ml-64">
                 {% include('admin/layout/_admin-header.html.twig') %}
-                <div class="mt-10">
-                    {% block body %}{% endblock %}
-                </div>
+
+                <div class="container m-6"
+                {% block body %}{% endblock %}
             </div>
         </div>
 
