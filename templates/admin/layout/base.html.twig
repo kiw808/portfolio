@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr" class="text-gray-900 antialiased leading-tight">
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('tailwind') }}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+    </head>
+    <body class="min-h-screen bg-gray-100">
+        <div class="min-h-screen flex">
+            {% include('admin/layout/_admin-side.html.twig') %}
+
+            <div class="w-full">
+                {% include('admin/layout/_admin-header.html.twig') %}
+                <div class="mt-10">
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
+        </div>
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </body>
+</html>

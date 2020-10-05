@@ -1,0 +1,22 @@
+{% import '_macros/admin-dashboard.twig' as dash %}
+
+{% set currentRoute = app.request.get('_route') %}
+
+<aside class="min-h-screen fixed px-4 w-64 bg-indigo-600">
+    <div class="flex items-center justify-center mb-6 mt-2">
+        <svg class="h-6 w-6 fill-current text-gray-100 mr-4">
+            <use xlink:href="{{ asset('build/icons/zondicons-sprite.svg#coffee') }}"></use>
+        </svg>
+        <h3 class="text-2xl py-4 font-bold text-gray-100">Admin</h3>
+    </div>
+    <nav class="w-full text-gray-100">
+        <ul>
+            {{ dash.item('Dashboard', 'admin_index', 'dashboard', currentRoute) }}
+            {{ dash.item('Blog', '#', 'news-paper', currentRoute) }}
+            {{ dash.item('Projects', '#', 'portfolio', currentRoute) }}
+            {{ dash.item('Clients', '#', 'currency-dollar', currentRoute) }}
+            {{ dash.item('Technos', '#', 'code', currentRoute) }}
+            {{ dash.item('Users', '#', 'user-solid-circle', currentRoute) }}
+        </ul>
+    </nav>
+</aside>

@@ -1,0 +1,23 @@
+<div class="fixed ml-64 w-screen pr-64 py-2 bg-gray-800 flex justify-between">
+    <div></div>
+    <nav>
+        <ul class="text-gray-100 mr-6 flex">
+            <li>
+                <a class="p-3 hover:bg-gray-900 flex items-center rounded" href="{{ path('home') }}">
+                    <svg class="h-4 w-4 fill-current text-gray-100 mr-2">
+                        <use xlink:href="{{ asset('build/icons/zondicons-sprite.svg#home') }}"></use>
+                    </svg>
+                    Front
+                </a>
+            </li>
+            <li>
+                <a class="p-3 hover:bg-gray-900 flex items-center rounded" href="{{ path('app_logout') }}">
+                    <svg class="h-4 w-4 fill-current text-gray-100 mr-2">
+                        <use xlink:href="{{ asset('build/icons/zondicons-sprite.svg#lock-closed') }}"></use>
+                    </svg>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
