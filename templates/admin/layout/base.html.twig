@@ -15,10 +15,10 @@
             <div class="w-full ml-64">
                 {% include('admin/layout/_admin-header.html.twig') %}
 
-                <div class="container m-6"
-                {% block body %}{% endblock %}
+                <div class="m-6">
+                    {% block body %}{% endblock %}
+                </div>
             </div>
-        </div>
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
