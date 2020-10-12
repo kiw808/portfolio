@@ -8,12 +8,14 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
-    <body class="bg-gray-300 w-full">
+    <body class="bg-gray-800 w-full">
         {% if app.request.get('_route') != 'app_login' %}
             {% include('front/layout/header.html.twig') %}
         {% endif %}
 
         {% block body %}{% endblock %}
+
+        {% block footer %}{% endblock %}
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}

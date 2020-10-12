@@ -102,4 +102,6 @@ Encore
     //.addEntry('admin', './assets/admin.js')
 ;
 
-module.exports = Encore.getWebpackConfig();
+let config = Encore.getWebpackConfig();
+
+module.exports = config;

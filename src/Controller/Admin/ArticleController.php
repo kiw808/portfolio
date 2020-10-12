@@ -5,6 +5,7 @@ namespace App\Controller\Admin;
 use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -30,9 +31,10 @@ class ArticleController extends AbstractController
     /**
      * @Route("/new", name="new", methods={"GET","POST"})
      * @param Request $request
+     * @param UserRepository $user
      * @return Response
      */
-    public function new(Request $request): Response
+    public function new(Request $request, UserRepository $user): Response
     {
         $article = new Article();
         $form = $this->createForm(ArticleType::class, $article);
@@ -40,6 +42,10 @@ class ArticleController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+            $article
+                ->setCreatedAt(new \DateTime('now'))
+                ->setAuthor($user->find($this->getUser()));
+            ;
             $entityManager->persist($article);
             $entityManager->flush();
 
@@ -76,7 +82,12 @@ class ArticleController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
+            $entityManager = $this->getDoctrine()->getManager();
+
+            $article->setUpdatedAt(new \DateTime('now'));
+
+            $entityManager->persist($article);
+            $entityManager->flush();
 
             return $this->redirectToRoute('admin_article_index');
         }
