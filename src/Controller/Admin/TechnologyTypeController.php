@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/admin/technology/type", name="admin_technology_type_")
+ * @Route("/admin/technologytype", name="admin_technology_type_")
  */
 class TechnologyTypeController extends AbstractController
 {

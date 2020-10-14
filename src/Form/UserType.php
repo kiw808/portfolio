@@ -18,6 +18,7 @@ class UserType extends AbstractType
         $builder
             ->add('username', TextType::class)
             ->add('roles', ChoiceType::class, [
+                'placeholder' => '-- Roles --',
                 'choices' => [
                     'Administrator' => 'ROLE_ADMIN',
                     'Moderator' => 'ROLE_MODERATOR',

@@ -17,6 +17,7 @@ class TechnologyType extends AbstractType
         $builder
             ->add('name', TextType::class)
             ->add('technologyType', EntityType::class, [
+                'placeholder' => '-- Type --',
                 'class' => \App\Entity\TechnologyType::class,
                 'choice_label' => 'name'
             ])

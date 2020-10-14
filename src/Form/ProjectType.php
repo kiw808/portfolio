@@ -22,12 +22,13 @@ class ProjectType extends AbstractType
             ->add('name', TextType::class)
             ->add('description', TextareaType::class)
             ->add('type', ChoiceType::class, [
+                'placeholder' => '-- Type --',
                 'choices' => [
-                    'Front-end',
-                    'Back-end',
-                    'Application',
-                    'Website',
-                    'API'
+                    'Front-end' => 'Front-end',
+                    'Back-end' => 'Back-end',
+                    'Application' => 'Application',
+                    'Website' => 'Website',
+                    'API' => 'API'
                 ],
                 'expanded' => false,
                 'multiple' => true
@@ -36,6 +37,7 @@ class ProjectType extends AbstractType
             ->add('url', TextType::class)
             ->add('client', EntityType::class, [
                 'class' => Client::class,
+                'placeholder' => '-- Client --',
                 'choice_label' => 'name'
             ])
             ->add('technologies', EntityType::class, [

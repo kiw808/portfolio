@@ -18,6 +18,7 @@ class ClientType extends AbstractType
             ->add('name', TextType::class)
             ->add('description', TextareaType::class)
             ->add('type', ChoiceType::class, [
+                'placeholder' => '-- Type --',
                 'choices' => [
                     'Agency' => 'Agency',
                     'Tech company' => 'Tech company',

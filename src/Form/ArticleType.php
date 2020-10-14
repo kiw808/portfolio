@@ -22,6 +22,7 @@ class ArticleType extends AbstractType
             ->add('content', TextareaType::class)
             ->add('category', EntityType::class, [
                 'class' => Category::class,
+                'placeholder' => '-- Category --',
                 'choice_label' => 'name'
             ])
             ->add('tags', EntityType::class, [
