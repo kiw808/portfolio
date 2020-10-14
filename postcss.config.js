@@ -7,3 +7,9 @@ module.exports = {
         require('postcss-import')
     ]
 }
+
+// module.exports = {
+//     plugins: [
+//         require('tailwindcss'),
+//     ]
+// }
