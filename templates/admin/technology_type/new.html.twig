@@ -1,0 +1,11 @@
+{% extends 'admin/layout/base.html.twig' %}
+
+{% block title %}New TechnologyType{% endblock %}
+
+{% block body %}
+    <h1>Create new TechnologyType</h1>
+
+    {{ include('admin/technology_type/_form.html.twig') }}
+
+    <a href="{{ path('admin_technology_type_index') }}">back to list</a>
+{% endblock %}

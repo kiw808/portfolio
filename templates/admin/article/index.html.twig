@@ -1,0 +1,79 @@
+{% extends 'admin/layout/base.html.twig' %}
+
+{% block title %}Articles{% endblock %}
+
+{% block context %}
+{% endblock %}
+
+{% block body %}
+    <div class="flex justify-between mb-4">
+        <h1 class="text-2xl font-bold">Article index</h1>
+
+        <div>
+            <a class="py-2 px-4 mr-2 bg-indigo-500 rounded text-white hover:bg-indigo-600 shadow-md inline-flex items-center"
+               href="{{ path
+                   ('admin_article_new')
+               }}">
+                <svg class="h-3 w-3 fill-current text-gray-100 mr-2">
+                    <use xlink:href="{{ asset('build/icons/zondicons-sprite.svg#compose') }}"></use>
+                </svg>
+                <span>Create new</span>
+            </a>
+            <a class="p-2 text-sm bg-gray-500 text-white rounded shadow hover:bg-gray-600 inline-flex items-center" href="{{
+            path('admin_category_index') }}">
+                <svg class="h-3 w-3 fill-current text-gray-100 mr-2">
+                    <use xlink:href="{{ asset('build/icons/zondicons-sprite.svg#color-palette') }}"></use>
+                </svg>
+                <span>Categories</span>
+            </a>
+            <a class="p-2 mr-2 text-sm bg-gray-500 text-white rounded shadow hover:bg-gray-600 inline-flex items-center" href="{{
+            path('admin_tag_index') }}">
+                <svg class="h-3 w-3 fill-current text-gray-100 mr-2">
+                    <use xlink:href="{{ asset('build/icons/zondicons-sprite.svg#tag') }}"></use>
+                </svg>
+                <span>Tags</span>
+            </a>
+        </div>
+    </div>
+
+    <table class="w-full">
+        <thead>
+            <tr>
+                <th class="px-4 py-2">Id</th>
+                <th class="px-4 py-2">Title</th>
+                <th class="px-4 py-2">CreatedAt</th>
+                <th class="px-4 py-2">UpdatedAt</th>
+                <th class="px-4 py-2">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td class="border px-4 py-2">{{ article.id }}</td>
+                <td class="border px-4 py-2">{{ article.title }}</td>
+                <td class="border px-4 py-2">{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td class="border px-4 py-2">{{ article.updatedAt ? article.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td class="border px-4 py-4">
+                    <div class="inline-flex">
+                        <a class="py-2 px-4 text-sm bg-gray-500 rounded-l border-r border-white text-white
+                        hover:bg-gray-600"
+                           href="{{
+                        path
+                            ('admin_article_show',
+                            {'id':
+                            article
+                            .id}) }}">show</a>
+                        <a class="py-2 px-4 text-sm bg-gray-500 rounded-r text-white hover:bg-gray-600" href="{{ path
+                            ('admin_article_edit', {'id':
+                            article.id}) }}">edit</a>
+                    </div>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

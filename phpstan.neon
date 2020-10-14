@@ -5,5 +5,6 @@ parameters:
         - tests
     ignoreErrors:
         - '#Property [a-zA-Z0-9\\_]+::\$[a-zA-Z0-9]* has no typehint specified.#'
+        - '#Method [a-zA-Z0-9\\_]+::[a-zA-Z()]* has no return typehint specified.#'
     checkMissingIterableValueType: false
     checkGenericClassInNonGenericObjectType: false

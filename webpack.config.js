@@ -53,7 +53,7 @@ Encore
     .addEntry('app', './assets/app.js')
     //.addEntry('page1', './assets/page1.js')
     //.addEntry('page2', './assets/page2.js')
-    .addStyleEntry('tailwind', './assets/styles/tailwind.css')
+    //.addStyleEntry('tailwind', './assets/styles/tailwind.css')
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
@@ -76,10 +76,10 @@ Encore
     .enableVersioning(Encore.isProduction())
 
     // enables @babel/preset-env polyfills
-    .configureBabelPresetEnv((config) => {
-        config.useBuiltIns = 'usage';
-        config.corejs = 3;
-    })
+    // .configureBabelPresetEnv((config) => {
+    //     config.useBuiltIns = 'usage';
+    //     config.corejs = 3;
+    // })
 
     // enables Sass/SCSS support
     .enableSassLoader()
@@ -102,4 +102,6 @@ Encore
     //.addEntry('admin', './assets/admin.js')
 ;
 
-module.exports = Encore.getWebpackConfig();
+let config = Encore.getWebpackConfig();
+
+module.exports = config;

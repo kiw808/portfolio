@@ -1,0 +1,26 @@
+{% extends 'admin/layout/base.html.twig' %}
+
+{% block title %}TechnologyType{% endblock %}
+
+{% block body %}
+    <h1>TechnologyType</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ technology_type.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ technology_type.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_technology_type_index') }}">back to list</a>
+
+    <a href="{{ path('admin_technology_type_edit', {'id': technology_type.id}) }}">edit</a>
+
+    {{ include('admin/technology_type/_delete_form.html.twig') }}
+{% endblock %}
