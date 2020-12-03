@@ -4,9 +4,40 @@
 
 {% block body %}
 <div class="container mx-auto p-4">
-    <div class="mt-24 pl-16">
+    <div class="mb-12">
         <h1 class="text-6xl">PIERRE MULLER</h1>
         <p class="text-4xl">web developper</p>
+        <div>
+            {% for techno in technos %}
+                <span class="badge badge-indigo hover:bg-indigo-500 hover:text-white">{{ techno.name }}</span>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="mb-12">
+        <h2 class="text-4xl text-center">About me</h2>
+        <p class="text-center">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam laoreet sit amet nulla non auctor. Fusce
+            eu auctor nisl. Quisque eleifend lacinia nunc porttitor commodo. Nulla volutpat, eros quis bibendum
+            blandit, nisi sapien vehicula turpis, nec egestas ex velit et ligula. Aliquam consectetur molestie lacus
+            id pretium. Vivamus et magna sed neque condimentum suscipit nec ut quam. Nullam feugiat id lorem interdum
+            vulputate. Mauris sed imperdiet felis. Curabitur purus leo, ullamcorper nec nulla nec, semper blandit
+            nunc. Vivamus quis diam at orci pulvinar convallis. Ut id nibh in sem sagittis maximus eget vitae risus.
+            Cras interdum in enim viverra interdum. Sed vehicula finibus mollis. Ut ut risus ac sapien rutrum
+            efficitur quis sed lectus. Curabitur imperdiet tristique viverra.
+        </p>
+    </div>
+    <div class="mb-12">
+        <h2 class="text-4xl text-center">Projects</h2>
+        <p class="text-center">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam laoreet sit amet nulla non auctor. Fusce
+            eu auctor nisl. Quisque eleifend lacinia nunc porttitor commodo. Nulla volutpat, eros quis bibendum
+            blandit, nisi sapien vehicula turpis, nec egestas ex velit et ligula. Aliquam consectetur molestie lacus
+            id pretium. Vivamus et magna sed neque condimentum suscipit nec ut quam. Nullam feugiat id lorem interdum
+            vulputate. Mauris sed imperdiet felis. Curabitur purus leo, ullamcorper nec nulla nec, semper blandit
+            nunc. Vivamus quis diam at orci pulvinar convallis. Ut id nibh in sem sagittis maximus eget vitae risus.
+            Cras interdum in enim viverra interdum. Sed vehicula finibus mollis. Ut ut risus ac sapien rutrum
+            efficitur quis sed lectus. Curabitur imperdiet tristique viverra.
+        </p>
     </div>
 </div>
 {% endblock %}

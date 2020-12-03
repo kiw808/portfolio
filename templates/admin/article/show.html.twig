@@ -4,7 +4,17 @@
 
 
 {% block body %}
-    <h1>Article</h1>
+    <div class="flex justify-between mb-4">
+        <h1 class="text-2xl font-bold">Article</h1>
+
+        <a class="py-2 px-4 mr-2 bg-indigo-500 rounded text-white hover:bg-indigo-600 shadow-md inline-flex items-center"
+           href="{{ path('admin_article_edit', {'id': article.id}) }}">
+            <svg class="h-3 w-3 fill-current text-gray-100 mr-2">
+                <use xlink:href="{{ asset('build/icons/zondicons-sprite.svg#compose') }}"></use>
+            </svg>
+            <span>Edit</span>
+        </a>
+    </div>
 
     <table class="table">
         <tbody>
@@ -32,8 +42,6 @@
     </table>
 
     <a href="{{ path('admin_article_index') }}">back to list</a>
-
-    <a href="{{ path('admin_article_edit', {'id': article.id}) }}">edit</a>
 
     {{ include('admin/article/_delete_form.html.twig') }}
 {% endblock %}
