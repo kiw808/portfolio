@@ -38,7 +38,6 @@ class ApiSandboxController extends AbstractController
             ]
         ]);
 
-        $repos = [];
         if ($response->getStatusCode() == Response::HTTP_NOT_FOUND) {
             throw new NotFoundHttpException('No repos found');
         } else {
