@@ -1,0 +1,40 @@
+{% extends 'admin/layout/base.html.twig' %}
+
+{% block title %}API Sandbox{% endblock %}
+
+{% block context %}
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div>
+            <h1>My repos</h1>
+
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Github</th>
+                </tr>
+                {% for repo in repos %}
+                    <tr>
+                        <td>
+                            <a href="{{ path('admin_api_sandbox_show', {'id': repo.id}) }}"
+                               class="text-indigo-500 hover:text-indigo-700 hover:underline">
+                                {{ repo.name }}
+                            </a>
+                        </td>
+                        <td>{{ repo.description }}</td>
+                        <td>
+                            <a href="{{ repo.html_url }}" target="_blank"
+                               class="text-indigo-500 hover:text-indigo-700 hover:underline">
+                                {{ repo.full_name }}
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+    </div>
+{% endblock %}
