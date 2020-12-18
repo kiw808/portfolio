@@ -1,0 +1,11 @@
+{% extends 'admin/layout/base.html.twig' %}
+
+
+{% block title %}{{ repo.name }}{% endblock %}
+
+
+{% block body %}
+    <p>ID : {{ repo.id }}</p>
+    <h1 class="text-2xl">Name : {{ repo.name }}</h1>
+    <p>{{ repo.description }}</p>
+{% endblock %}
