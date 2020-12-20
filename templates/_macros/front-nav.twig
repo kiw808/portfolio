@@ -1,9 +1,8 @@
 {# Link for front navigation #}
 {% macro item(name, route, currentRoute) %}
-    {% set active = 'text-white' %}
-    <li class="mr-6">
-        <a class="text-gray-400 hover:text-white py-4 px-2 {% if currentRoute == route %}{{
-        active }}{% endif %}"
+    {% set active = 'bg-primary' %}
+    <li>
+        <a class="inline-block text-light hover:bg-primary p-4 {% if currentRoute == route %}{{ active }}{% endif %}"
            href="{% if route != '#' %}{{ path(route) }}{% else %}{{ route }}{% endif %}">
             {{ name }}
         </a>

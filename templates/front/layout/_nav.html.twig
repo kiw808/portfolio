@@ -2,13 +2,15 @@
 
 {% set currentRoute = app.request.get('_route') %}
 
-<header>
-    <nav class="flex justify-between bg-indigo-700 p-4">
+<nav class="bg-dark">
+    <div class="container mx-auto flex justify-between">
         <div>
             <ul class="flex">
                 <li>
-                    <a class="text-gray-400 hover:text-white py-4 px-2 text-xl" href="{{ path('front_home')}}">Pierre
-                        MULLER</a>
+                    <a class="inline-block text-light hover:bg-primary p-4 font-bold"
+                       href="{{ path('front_home')}}">
+                        Pierre MULLER
+                    </a>
                 </li>
             </ul>
         </div>
@@ -18,14 +20,14 @@
                 {{ nav.item('Services', '#', currentRoute) }}
                 {{ nav.item('Clients', '#', currentRoute) }}
                 {{ nav.item('Contact', '#', currentRoute) }}
-                <li class="mr-6">
+                <li>
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <a class="text-gray-400 hover:text-white py-4 px-2" href="{{ path('app_logout') }}">Logout</a>
+                        <a class="inline-block text-light hover:bg-primary p-4" href="{{ path('app_logout') }}">Logout</a>
                     {% else %}
-                        <a class="text-gray-400 hover:text-white py-4 px-2" href="{{ path('app_login') }}">Login</a>
+                        <a class="inline-block text-light hover:bg-primary p-4" href="{{ path('app_login') }}">Login</a>
                     {% endif %}
                 </li>
             </ul>
         </div>
-    </nav>
-</header>
+    </div>
+</nav>

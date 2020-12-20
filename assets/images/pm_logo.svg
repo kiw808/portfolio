@@ -1,0 +1,16 @@
+<svg width="100%" height="100%" viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:1.5;">
+    <rect id="Plan-de-travail1" serif:id="Plan de travail1" x="0" y="0" width="400" height="400" style="fill:none;"/>
+    <clipPath id="_clip1">
+        <rect id="Plan-de-travail11" serif:id="Plan de travail1" x="0" y="0" width="400" height="400"/>
+    </clipPath>
+    <g clip-path="url(#_clip1)">
+        <g transform="matrix(0.435658,0,0,0.435658,37.0032,149.204)">
+            <text x="56px" y="260px" style="font-family:'HelveticaNeue-Bold', 'Helvetica Neue';font-weight:700;font-size:401.691px;">P</text>
+            <text x="323.928px" y="260px" style="font-family:'HelveticaNeue-Bold', 'Helvetica Neue';font-weight:700;font-size:401.691px;">m</text>
+        </g>
+        <path d="M148,-0L0,-0L-0,400L148,400" style="fill:none;stroke:black;stroke-width:56px;"/>
+        <g transform="matrix(-1,0,0,1,400,5.68434e-14)">
+            <path d="M148,-0L0,-0L-0,400L148,400" style="fill:none;stroke:black;stroke-width:56px;"/>
+        </g>
+    </g>
+</svg>

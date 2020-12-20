@@ -9,7 +9,7 @@
     </head>
     <body class="w-full">
         {% if app.request.get('_route') != 'app_login' %}
-            {% include('front/layout/header.html.twig') %}
+            {% include('front/layout/_nav.html.twig') %}
         {% endif %}
 
         {% block body %}{% endblock %}
