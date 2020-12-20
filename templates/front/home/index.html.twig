@@ -3,17 +3,6 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-<div class="">
-    <header class="bg-light" id="hero">
-        <div class="container mx-auto py-48">
-            <h1 class="text-8xl font-extralight text-secondary">PIERRE MULLER</h1>
-            <p class="text-6xl font-bold leading-normal text-dark">web developper</p>
-            <div>
-                {% for techno in technos %}
-                    <span class="badge badge-indigo leading-normal">{{ techno.name }}</span>
-                {% endfor %}
-            </div>
-        </div>
-    </header>
-</div>
+    {% include('front/home/_header.html.twig') %}
+    {% include 'front/home/_services.html.twig' %}
 {% endblock %}
