@@ -2,11 +2,11 @@
 
 {% set currentRoute = app.request.get('_route') %}
 
-<nav class="bg-light">
+<nav class="bg-secondary">
     <div class="container mx-auto flex justify-between">
         <div class="flex items-center">
             <a href="{{ path('front_home')}}">
-                <svg class="h-10 fill-current text-dark hover:text-primary" viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:1.5;">
+                <svg class="h-10 fill-current text-light hover:text-primary" viewBox="0 0 400 400" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-miterlimit:1.5;">
                     <g clip-path="url(#_clip1)">
                         <g transform="matrix(0.435658,0,0,0.435658,37.0032,149.204)">
                             <g transform="matrix(401.691,0,0,401.691,56,260)">
@@ -33,9 +33,9 @@
                 {{ nav.item('Contact', '#', currentRoute) }}
                 <li>
                     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <a class="inline-block text-dark hover:text-primary p-4" href="{{ path('app_logout') }}">Logout</a>
+                        <a class="inline-block text-light hover:text-primary p-4" href="{{ path('app_logout') }}">Logout</a>
                     {% else %}
-                        <a class="inline-block text-dark hover:text-primary p-4" href="{{ path('app_login') }}">Login</a>
+                        <a class="inline-block text-light hover:text-primary p-4" href="{{ path('app_login') }}">Login</a>
                     {% endif %}
                 </li>
             </ul>
