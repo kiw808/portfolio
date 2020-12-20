@@ -2,7 +2,7 @@
 {% macro item(name, route, currentRoute) %}
     {% set active = 'bg-primary' %}
     <li>
-        <a class="inline-block text-light hover:bg-primary p-4 {% if currentRoute == route %}{{ active }}{% endif %}"
+        <a class="inline-block text-dark hover:text-primary p-4 {% if currentRoute == route %}{{ active }}{% endif %}"
            href="{% if route != '#' %}{{ path(route) }}{% else %}{{ route }}{% endif %}">
             {{ name }}
         </a>

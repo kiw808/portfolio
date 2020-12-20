@@ -1,9 +1,9 @@
 .badge {
-    @apply py-1 px-2 mr-1 text-xs rounded-full border border-black;
+    @apply py-1 px-2 mr-1 text-xs rounded-full border;
 }
 
 .badge-indigo {
-    @apply border-indigo-500 text-indigo-500;
+    @apply border-secondary text-light bg-secondary;
 }
 
 .badge-green {
