@@ -7,12 +7,12 @@
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
     </head>
-    <body class="min-h-screen bg-gray-100 text-gray-900">
+    <body class="min-h-screen bg-gray-200 text-gray-900">
         <div class="min-h-screen flex">
             {% include('admin/layout/_admin-side.html.twig') %}
 
             <div class="w-full ml-64">
-                {% include('admin/layout/_admin-header.html.twig') %}
+                {% include('admin/layout/_admin-_nav.html.twig') %}
 
                 {% block context %}{% endblock %}
                 <div class="m-6">

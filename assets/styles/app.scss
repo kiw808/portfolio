@@ -1,17 +1,6 @@
-// Import Tailwind core
-@tailwind base;
+@import "~tailwindcss/base";
 
-@tailwind components;
+@import "~tailwindcss/components";
+@import "./components.css";
 
-@tailwind utilities;
-
-// Extract custom components
-@layer components {
-  .badge {
-    @apply py-1 px-2 mr-1 text-xs rounded-full border border-black;
-  }
-
-  .badge-indigo {
-    @apply border-indigo-500 text-indigo-500;
-  }
-}
+@import "~tailwindcss/utilities";

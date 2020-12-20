@@ -3,17 +3,6 @@ const PurgeCssPlugin = require('purgecss-webpack-plugin');
 const glob = require('glob-all');
 const path = require('path');
 
-if (Encore.isProduction()) {
-    Encore.addPlugin(new PurgeCssPlugin({
-        paths: glob.sync([
-            path.join(__dirname, 'templates/**/*.html.twig')
-        ]),
-    defaultExtractor: (content) => {
-        return content.match(/[\w-/:]+(?<!:)/g) || [];
-        }
-    }));
-}
-
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
 if (!Encore.isRuntimeEnvironmentConfigured()) {
@@ -101,6 +90,17 @@ Encore
     //.enableReactPreset()
     //.addEntry('admin', './assets/admin.js')
 ;
+
+if (Encore.isProduction()) {
+    Encore.addPlugin(new PurgeCssPlugin({
+        paths: glob.sync([
+            path.join(__dirname, 'templates/**/*.html.twig')
+        ]),
+    defaultExtractor: (content) => {
+        return content.match(/[\w-/:]+(?<!:)/g) || [];
+        }
+    }));
+}
 
 let config = Encore.getWebpackConfig();
 

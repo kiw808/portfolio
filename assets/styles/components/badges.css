@@ -1,0 +1,11 @@
+.badge {
+    @apply py-1 px-2 mr-1 text-xs rounded-full border;
+}
+
+.badge-indigo {
+    @apply border-secondary text-light bg-secondary;
+}
+
+.badge-green {
+    @apply border-green-500 text-green-500;
+}

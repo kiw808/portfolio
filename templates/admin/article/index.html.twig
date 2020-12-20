@@ -34,45 +34,47 @@
         </div>
     </div>
 
-    <table class="w-full">
-        <thead>
+    <div class="pm-table-wrapper">
+        <table class="pm-table">
+            <thead class="bg-gray-50">
             <tr>
-                <th class="px-4 py-2">Id</th>
-                <th class="px-4 py-2">Title</th>
-                <th class="px-4 py-2">CreatedAt</th>
-                <th class="px-4 py-2">UpdatedAt</th>
-                <th class="px-4 py-2">actions</th>
+                <th class="pm-th">Id</th>
+                <th class="pm-th">Title</th>
+                <th class="pm-th">CreatedAt</th>
+                <th class="pm-th">UpdatedAt</th>
+                <th class="pm-th">actions</th>
             </tr>
-        </thead>
-        <tbody>
-        {% for article in articles %}
-            <tr>
-                <td class="border px-4 py-2">{{ article.id }}</td>
-                <td class="border px-4 py-2">
-                    <a href="{{ path('admin_article_show', {'id':article.id}) }}" class="text-indigo-500
+            </thead>
+            <tbody class="pm-tbody">
+            {% for article in articles %}
+                <tr>
+                    <td class="pm-td">{{ article.id }}</td>
+                    <td class="pm-td">
+                        <a href="{{ path('admin_article_show', {'id':article.id}) }}" class="text-indigo-500
                     hover:text-indigo-700 hover:underline">
-                        {{ article.title }}
-                    </a>
-                </td>
-                <td class="border px-4 py-2">{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td class="border px-4 py-2">{{ article.updatedAt ? article.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td class="border px-4 py-4 text-center">
-                    <div class="inline-flex">
-                        <a class="py-2 px-4 text-sm bg-gray-500 rounded-l border-r border-white text-white
+                            {{ article.title }}
+                        </a>
+                    </td>
+                    <td class="pm-td">{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                    <td class="pm-td">{{ article.updatedAt ? article.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                    <td class="pm-td">
+                        <div class="inline-flex">
+                            <a class="py-2 px-4 text-sm bg-gray-500 rounded-l border-r border-white text-white
                         hover:bg-gray-600"
-                           href="{{ path('admin_article_show',
-                            {'id':article.id}) }}">show</a>
-                        <a class="py-2 px-4 text-sm bg-gray-500 rounded-r text-white hover:bg-gray-600" href="{{ path
-                            ('admin_article_edit', {'id':
-                            article.id}) }}">edit</a>
-                    </div>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                               href="{{ path('admin_article_show',
+                                   {'id':article.id}) }}">show</a>
+                            <a class="py-2 px-4 text-sm bg-gray-500 rounded-r text-white hover:bg-gray-600" href="{{ path
+                                ('admin_article_edit', {'id':
+                                    article.id}) }}">edit</a>
+                        </div>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}
