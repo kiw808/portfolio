@@ -31,13 +31,6 @@
                 {{ nav.item('About', '#', currentRoute) }}
                 {{ nav.item('Blog', '#', currentRoute) }}
                 {{ nav.item('Contact', '#', currentRoute) }}
-                <li>
-                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
-                        <a class="inline-block text-light hover:text-primary p-4" href="{{ path('app_logout') }}">Logout</a>
-                    {% else %}
-                        <a class="inline-block text-light hover:text-primary p-4" href="{{ path('app_login') }}">Login</a>
-                    {% endif %}
-                </li>
             </ul>
         </div>
     </div>
