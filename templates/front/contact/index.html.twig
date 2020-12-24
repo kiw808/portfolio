@@ -1,5 +1,34 @@
 {% extends 'front/layout/base.html.twig' %}
 
+{% block title %}Contact{% endblock %}
+
 {% block body %}
-<h1>Contact</h1>
+    <div class="container">
+        <header class="mb-12 mt-8">
+            <h1 class="text-6xl text-primary">Contact</h1>
+        </header>
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div id=contactForm">
+                {{ form_start(form) }}
+                    <div class="grid grid-cols-2">
+                        {{ form_row(form.firstname) }}
+                        {{ form_row(form.lastname) }}
+                        {{ form_row(form.email) }}
+                        {{ form_row(form.phone) }}
+                    </div>
+                    <div class="">
+                        {{ form_row(form.subject) }}
+                        {{ form_row(form.message) }}
+                    </div>
+                    <div class="flex justify-end">
+                        <button class="px-3 py-2 rounded bg-secondary text-light hover:bg-primary">{{ button_label|default('Send') }}</button>
+                    </div>
+                {{ form_end(form) }}
+            </div>
+            <div id="info">
+                <h3 class="text-xl">Pierre Muller</h3>
+                <p>pierremanu.muller@gmail.com</p>
+            </div>
+        </section>
+    </div>
 {% endblock %}
