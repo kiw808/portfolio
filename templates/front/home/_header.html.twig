@@ -1,11 +1,22 @@
-<header class="bg-light" id="hero">
-    <div class="container mx-auto py-48">
-        <h1 class="text-8xl font-extralight text-secondary">PIERRE MULLER</h1>
-        <p class="text-6xl font-bold leading-normal text-dark">web developper</p>
-        <div>
-            {% for techno in technos %}
-                <span class="badge badge-indigo leading-normal">{{ techno.name }}</span>
-            {% endfor %}
+<header class="bg-secondary" id="hero">
+    <div class="container lg:grid lg:grid-cols-2">
+        <div class="py-24 md:py-48">
+            <p class="text-light font-mono leading-normal">
+                <svg class="inline h-4 w-4 fill-current text-light">
+                    <use xlink:href="{{ asset('build/images/zondicons-sprite.svg#location') }}"></use>
+                </svg>
+                Strasbourg, France
+            </p>
+            <h1 class="text-6xl md:text-8xl font-extralight text-primary">PIERRE MULLER</h1>
+            <h2 class="text-4xl leading-normal md:text-6xl md:leading-normal font-bold text-light">web developper</h2>
+            <div>
+                {% for techno in technos %}
+                    <span class="badge badge-primary leading-normal">{{ techno.name }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="hidden lg:block lg:pt-20">
+            <img class="lg:pl-8 xl:pl-12 2xl:pl-32" src="{{ asset('build/images/pm_blocks-small.svg') }}" alt="pm_blocks">
         </div>
     </div>
 </header>
