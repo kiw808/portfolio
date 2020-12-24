@@ -35,18 +35,19 @@ class Contact
     private string $email;
 
     /**
-     * @var ?string
+     * @var ?integer
      * @Assert\Regex(
      *     pattern="/[0-9]{10}/"
      * )
      */
-    private ?string $phone;
+    private ?int $phone = null;
 
     /**
-     * @var ?string
+     * @var string
+     * @Assert\NotBlank()
      * @Assert\Length(min=2)
      */
-    private ?string $subject;
+    private string $subject;
 
     /**
      * @var string
@@ -110,36 +111,36 @@ class Contact
     }
 
     /**
-     * @return string|null
+     * @return int|null
      */
-    public function getPhone(): ?string
+    public function getPhone(): ?int
     {
         return $this->phone;
     }
 
     /**
-     * @param string|null $phone
+     * @param int|null $phone
      * @return Contact
      */
-    public function setPhone(?string $phone): Contact
+    public function setPhone(?int $phone): Contact
     {
         $this->phone = $phone;
         return $this;
     }
 
     /**
-     * @return string|null
+     * @return string
      */
-    public function getSubject(): ?string
+    public function getSubject(): string
     {
         return $this->subject;
     }
 
     /**
-     * @param string|null $subject
+     * @param string $subject
      * @return Contact
      */
-    public function setSubject(?string $subject): Contact
+    public function setSubject(string $subject): Contact
     {
         $this->subject = $subject;
         return $this;
