@@ -3,14 +3,15 @@
 {% block title %}Contact{% endblock %}
 
 {% block body %}
-    <div class="container">
-        <header class="mb-12 mt-8">
-            <h1 class="text-6xl text-primary">Contact</h1>
-        </header>
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div id=contactForm">
-                {{ form_start(form) }}
-                    <div class="grid grid-cols-2">
+    <div class="bg-light">
+        <div class="container">
+            <header class="mb-12 pt-8">
+                <h1 class="text-6xl text-primary">Contact</h1>
+            </header>
+            <section class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div id=contactForm">
+                    {{ form_start(form) }}
+                    <div class="grid grid-cols-2 gap-x-8">
                         {{ form_row(form.firstname) }}
                         {{ form_row(form.lastname) }}
                         {{ form_row(form.email) }}
@@ -23,12 +24,13 @@
                     <div class="flex justify-end">
                         <button class="px-3 py-2 rounded bg-secondary text-light hover:bg-primary">{{ button_label|default('Send') }}</button>
                     </div>
-                {{ form_end(form) }}
-            </div>
-            <div id="info">
-                <h3 class="text-xl">Pierre Muller</h3>
-                <p>pierremanu.muller@gmail.com</p>
-            </div>
-        </section>
+                    {{ form_end(form) }}
+                </div>
+                <div id="info">
+                    <h3 class="text-xl">Pierre Muller</h3>
+                    <p>pierremanu.muller@gmail.com</p>
+                </div>
+            </section>
+        </div>
     </div>
 {% endblock %}
