@@ -1,0 +1,35 @@
+{{ form_start(form, {'attr':
+    {'class': 'mb-8'}
+}) }}
+    {{ form_errors(form) }}
+    <div class="grid grid-cols-2 gap-x-8">
+        {{ form_row(form.firstname, {'attr':
+            {'class': 'bg-white border-b-2 border-secondary placeholder-dark mb-8 focus:ring-1 focus:ring-secondary'}
+        }) }}
+        {{ form_row(form.lastname, {'attr':
+            {'class': 'bg-white border-b-2 border-secondary placeholder-dark mb-8 focus:ring-1 focus:ring-secondary'}
+        }) }}
+        {{ form_row(form.email, {'attr':
+            {'class': 'bg-white border-b-2 border-secondary placeholder-dark mb-8 focus:ring-1 focus:ring-secondary'}
+        }) }}
+        {{ form_row(form.phone, {'attr':
+            {'class': 'bg-white border-b-2 border-secondary placeholder-dark mb-8 focus:ring-1 focus:ring-secondary'}
+        }) }}
+    </div>
+    <div>
+        {{ form_row(form.subject, {'attr':
+            {'class': 'bg-white border-b-2 border-secondary placeholder-dark mb-8 focus:ring-1 focus:ring-secondary'}
+        }) }}
+        {{ form_row(form.message, {'attr':
+            {'class': 'bg-white border-b-2 border-secondary placeholder-dark mb-8 focus:ring-1 focus:ring-secondary'}
+        }) }}
+    </div>
+    <div class="flex justify-end">
+        <button class="px-6 py-2 bg-secondary text-light hover:bg-primary transition-colors flex items-center">
+            {{ button_label|default('Send') }}
+            <svg class="inline h-4 w-4 fill-current ml-2">
+                <use xlink:href="{{ asset('build/images/zondicons-sprite.svg#send') }}"></use>
+            </svg>
+        </button>
+    </div>
+{{ form_end(form) }}
