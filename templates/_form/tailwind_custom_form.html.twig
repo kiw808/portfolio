@@ -5,8 +5,7 @@
 {% block form_widget_simple -%}
     {% if type is not defined or type != 'hidden' %}
         {%- set attr = attr|merge({class: (attr.class|default('') ~ (type|default('') == 'file' ? '
-        custom-file-input' : ' block w-full border border-gray-400 hover:border-gray-500 rounded p-2 mb-4
-        shadow-inner'))|trim}) -%}
+        custom-file-input' : ' block w-full p-2 mb-4'))|trim}) -%}
     {% endif %}
     {%- if type is defined and (type == 'range' or type == 'color') %}
         {# Attribute "required" is not supported #}
@@ -16,9 +15,7 @@
 {%- endblock form_widget_simple %}
 
 {% block textarea_widget -%}
-    {% set attr = attr|merge({class: (attr.class|default('') ~ ' block w-full border border-gray-400
-    hover:border-gray-500 rounded p-2 mb-4
-    shadow-inner')|trim}) %}
+    {% set attr = attr|merge({class: (attr.class|default('') ~ ' block w-full p-2 mb-4')|trim}) %}
     {{- parent() -}}
 {%- endblock textarea_widget %}
 
@@ -31,8 +28,7 @@
 {%- endblock choice_widget -%}
 
 {% block choice_widget_collapsed -%}
-    {%- set attr = attr|merge({class: (attr.class|default('') ~ ' block w-full border border-gray-400
-     hover:border-gray-500 shadow rounded p-2 mb-4')|trim}) -%}
+    {%- set attr = attr|merge({class: (attr.class|default('') ~ ' block w-full p-2 mb-4')|trim}) -%}
     {{- parent() -}}
 {%- endblock choice_widget_collapsed %}
 
@@ -44,8 +40,7 @@
             {% set label_attr = label_attr|merge({'for': id}) %}
         {%- endif -%}
         {% if required -%}
-            {% set label_attr = label_attr|merge({'class': (label_attr.class|default('block text-gray-700 font-bold
-            mb-2')
+            {% set label_attr = label_attr|merge({'class': (label_attr.class|default('block')
             ~ ' required')|trim}) %}
         {%- endif -%}
         {% if label is empty -%}
