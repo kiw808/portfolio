@@ -2,6 +2,10 @@
 
 {% block title %}New Article{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+{% endblock %}
 
 {% block body %}
     <div class="grid grid-cols-12">
@@ -14,4 +18,38 @@
         </div>
 
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
+    <script>
+        $(function() {
+            $('.js-select-single').select2({
+                width: 'element',
+                placeholder: 'Select a category'
+            });
+            $('.js-select-tags').select2({
+                tags: true,
+                placeholder: 'Select tags',
+                width: 'element',
+                tokenSeparators: [',', ' ', ';'],
+            }).on('change', function () {
+                let label = $(this).find("[data-select2-tag=true]");
+                if (label.length && $.inArray(label.val(), $(this).val() !== -1)) {
+                    $.ajax({
+                        url: "/admin/tag/new/ajax/" + label.val(),
+                        type: "POST",
+                    }).done(function (data) {
+                        console.log(data);
+                        label.replaceWith(
+                            `<option selected value="${data.id}">${label.val()}</option>`
+                        );
+                    });
+                }
+            });
+        });
+    </script>
 {% endblock %}

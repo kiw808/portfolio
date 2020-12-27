@@ -5,7 +5,9 @@ namespace App\Controller\Admin;
 use App\Entity\Tag;
 use App\Form\TagType;
 use App\Repository\TagRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -50,6 +52,25 @@ class TagController extends AbstractController
             'tag' => $tag,
             'form' => $form->createView(),
         ]);
+    }
+
+    /**
+     * @Route("/new/ajax/{tagLabel}", name="new-ajax", methods={"POST"})
+     * @param string $tagLabel
+     * @param EntityManagerInterface $em
+     * @return JsonResponse
+     */
+    public function newTagAjax(string $tagLabel, EntityManagerInterface $em) : JsonResponse
+    {
+        $tag = new Tag();
+        $tag->setName(trim(strip_tags($tagLabel)));
+
+        $em->persist($tag);
+        $em->flush();
+
+        $id = $tag->getId();
+
+        return new JsonResponse(['id' => $id]);
     }
 
     /**
