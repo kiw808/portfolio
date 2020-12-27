@@ -6,7 +6,7 @@
         active }}{% endif %}"
            href="{% if route != '#' %}{{ path(route) }}{% else %}{{ route }}{% endif %}">
             <svg class="h-4 w-4 fill-current text-gray-100 mr-2">
-                <use xlink:href="{{ asset('build/images/zondicons-sprite.svg#' ~ icon ~ '') }}"></use>
+                <use xlink:href="{{ asset('build/icons/zondicons-sprite.svg#' ~ icon ~ '') }}"></use>
             </svg>
             {{ name }}
         </a>
