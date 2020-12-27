@@ -6,5 +6,6 @@ parameters:
     ignoreErrors:
         - '#Property [a-zA-Z0-9\\_]+::\$[a-zA-Z0-9]* has no typehint specified.#'
         - '#Method [a-zA-Z0-9\\_]+::[a-zA-Z()]* has no return typehint specified.#'
+        - '/Parameter #[0-9]+ \$[a-zA-Z0-9]+ of method App\\Entity\\[a-zA-Z]+::[a-zA-Z]+\(\) expects App\\Entity\\[a-zA-Z0-9\|]+, object given\./'
     checkMissingIterableValueType: false
     checkGenericClassInNonGenericObjectType: false

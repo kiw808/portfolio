@@ -55,8 +55,8 @@
                             {{ article.title }}
                         </a>
                     </td>
-                    <td class="pm-td">{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                    <td class="pm-td">{{ article.updatedAt ? article.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                    <td class="pm-td">{{ article.createdAt ? article.createdAt|date('j M Y', "Europe/Paris") : '' }}</td>
+                    <td class="pm-td">{{ article.updatedAt ? article.updatedAt|date('j M Y', "Europe/Paris") : '' }}</td>
                     <td class="pm-td">
                         <div class="inline-flex">
                             <a class="py-2 px-4 text-sm bg-gray-500 rounded-l border-r border-white text-white

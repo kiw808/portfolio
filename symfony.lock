@@ -135,6 +135,9 @@
             "config/packages/fos_ckeditor.yaml"
         ]
     },
+    "fzaninotto/faker": {
+        "version": "v1.9.2"
+    },
     "gitonomy/gitlib": {
         "version": "v1.2.2"
     },
