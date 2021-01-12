@@ -1,0 +1,21 @@
+{% extends 'front/layout/base.html.twig' %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="text-8xl my-6">{{ article.title }}</h1>
+        <p class="mb-4">
+            <span class="text-gray-500">{{ article.category.name }} | </span>
+            {% for tag in article.tags %}
+                <span class="text-indigo-400">#{{ tag.name }}</span>
+            {% endfor %}
+        </p>
+
+        <div class="mb-6">
+            {{ article.content | raw }}
+        </div>
+
+        <a class="underline" href="{{ path('front_blog_index') }}">Back</a>
+    </div>
+{% endblock %}

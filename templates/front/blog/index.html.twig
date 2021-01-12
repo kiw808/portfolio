@@ -1,0 +1,20 @@
+{% extends 'front/layout/base.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="text-6xl my-6">Articles</h1>
+
+        {% for article in articles %}
+            <a class="text-4xl py-4 hover:underline" href="{{ path('front_article_show', {'id': article.id}) }}">{{ article.title }}</a>
+            <p class="mb-4">
+                <span class="text-gray-500">{{ article.category.name }} | </span>
+                {% for tag in article.tags %}
+                    <span class="text-indigo-400">#{{ tag.name }}</span>
+                {% endfor %}
+            </p>
+            <hr class="mb-4">
+        {% endfor %}
+    </div>
+{% endblock %}
