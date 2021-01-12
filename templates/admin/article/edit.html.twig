@@ -8,14 +8,13 @@
 {% endblock %}
 
 {% block body %}
-    <div class="grid grid-cols-12">
-        <div class="col-span-10 col-start-2">
-            <h1 class="text-4xl mb-6">Edit Article</h1>
+    <a href="{{ path('admin_article_index') }}">back to list</a>
+    <div>
+        <h1 class="text-4xl mb-6">Edit Article</h1>
 
-            {{ include('admin/article/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('admin/article/_form.html.twig', {'button_label': 'Update'}) }}
 
-            <a href="{{ path('admin_article_index') }}">back to list</a>
-
+        <div class="mt-4">
             {{ include('admin/article/_delete_form.html.twig') }}
         </div>
     </div>
